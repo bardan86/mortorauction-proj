@@ -1,0 +1,455 @@
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+:root{
+--maincolor:#5634AD;
+--subcolor:#CBBCF2  ;
+}
+body{
+background-color: var(--subcolor);
+font-family: Times, 'Times New Roman', serif;
+}
+.container{
+width: 80%;
+margin: 0 auto;
+}
+header{
+padding: 25px 0;
+}
+.head-contant{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.menu ,
+.register {
+list-style-type: none;
+color: var(--maincolor);
+}
+.menu li,
+.register li{
+display: inline-block;
+}
+.menu li a{
+text-decoration: none;
+/* margin: 10px; */
+}
+.menu  li{
+position: relative;
+padding: 10px 20px;
+margin: 0 10px ;
+font-size: 1.2em;
+text-transform: capitalize;
+
+}
+.menu > li::after,
+.menu > li::before{
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+border: solid;   
+cursor: pointer;
+}
+.menu > li::before{
+border-width: 0 2px;
+height: 100%;
+width: 94%;
+transform: scale(1,0);
+transition: 0.3s;
+}
+.menu li:hover:before{
+transform: scale(1,1);
+}
+.menu > li::after{
+border-width: 2px 0;
+height: 91%;
+width: 97%;
+transform: scale(0,1);
+transition: 0.5s;
+transform-origin: left;
+}
+.menu  li:hover:after{
+transform: scale(1,1);
+}
+
+.head-reg ul li{
+    margin-left:25px ;
+}
+.head-reg ul li i{
+    color: var(--maincolor);
+}
+.head-reg ul li:last-child{
+    position: relative;
+    font-weight: bold;
+    /* font-size: 20px; */
+   
+}
+.head-reg ul li i:last-child{
+    padding-right: 8px;
+   
+}
+.curt i:last-child::after{
+    content: "0";
+    position: absolute;
+    border-radius: 50%;
+    padding: 4px;
+    font-size: 13px;
+    bottom: -10px;
+    color: var(--subcolor);
+    background-color:var(--maincolor);
+}
+
+/* pageimage */
+
+.photo-cover{
+background-image: url(../carimage/backgroundcars.jpg);
+background-size: cover;
+width: 100%;
+height: 800px;
+margin-top: 10px ;
+
+}
+.photo-cover{
+    padding-left: 80px;
+    padding-top: 250px;
+}
+
+.photo-cover h3{
+    font-size: 3.3em;
+    color: var(--subcolor);
+    text-transform: capitalize;
+    
+}
+.photo-cover button{
+    margin-top: 35px;
+    font-size: 1.7em;
+    color: var(--maincolor);
+    background-color: var(--subcolor);
+    border: none;
+    
+}
+
+/* dropdown */
+.dropdown-box {
+    
+    position: relative;
+   
+  
+}
+.dropdown{
+    position: absolute;
+    width: 450px;
+    border: 2px solid var(--maincolor);
+    background-color: var(--subcolor);
+    left: 0;
+    z-index: 10;
+    padding: 15px;
+    margin-top: 12px;
+    transform: scale(0);
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+}
+.dropdownlist ul li{
+   padding: 0;
+}
+.dropdownlist{
+    display: table-cell;
+}
+.dropdownlist li a{
+    font-size: 0.7em;
+}
+.dropdown ul li:first-child{
+   border-bottom: 2px dotted var(--maincolor);
+   
+
+}
+.dropdown-box:hover .dropdown{
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+/* Category sec */
+.cat-header{
+    width: 80%;
+  margin:  auto;
+
+    
+}
+.cat-title{
+   width: 100%;
+   margin: 10px 0;
+   /* background-color: black; */
+}
+.cat-title h3{
+    display: block;
+   font-weight: bold;
+   color: var(--maincolor);
+   font-size: 2.3em;
+   letter-spacing: 3px;
+ /* background-color: black; */
+text-align: center;
+}
+.cat-title span{
+    display: block;
+    width: 150px;
+    height: 2px;
+    background-color: var(--maincolor);
+    margin: 10px auto;
+    transition: transform 1s;
+ }
+ .cat-title:hover.cat-title span{
+    transform: scalex(1.5);
+  
+}
+
+ .category-sec{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 10px;
+    
+ }
+ .cat-items h2,
+ .cat-items h4
+ {
+   color: var(--maincolor);
+ }
+ .cat-items{
+    position: relative;
+ }
+ .cat-items .icon{
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background-color: var(--maincolor);
+    color: #fff;
+    line-height: 35px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.1;
+}
+.cat-items:hover .icon{
+    visibility: visible;
+    opacity: 1;
+}
+ /* SPRITES.................................................................................................. */
+.sprites {
+    display:flex;
+    margin-bottom: 55px;
+}
+.sprite-item{
+    flex:1;
+    text-align: center;
+    border-right: 1px solid var(--maincolor);
+}
+.sprite-item:last-child{
+    border:0;
+}
+.sprite-info h3{
+    font-size: 17px;
+    color: var(--maincolor);
+}
+.sprite-info span{
+    color: var(--maincolor);
+    font-size: 15px;
+}
+.sprite-icon{
+    background-image: url(../carimage/service-icon.png);
+    height: 55px;
+    background-repeat: no-repeat;
+}
+.sprite-icon-1{
+background-position: center 5px;
+transition: all .5s;
+}
+.sprite-item:hover .sprite-icon-1{
+    background-position: center -86px;
+}
+.sprite-icon-2{
+background-position: center -180px;
+transition: all .5s;
+}
+.sprite-item:hover .sprite-icon-2{
+    background-position: center -273px;
+}
+.sprite-icon-3{
+background-position: center -366px;
+transition: all .5s;
+}
+.sprite-item:hover .sprite-icon-3{
+    background-position: center -455px;
+}
+.sprite-icon-4{
+background-position: center -549px;
+transition: all .5s;
+ }
+ .sprite-item:hover .sprite-icon-4{
+    background-position: center -639px;
+}
+.sprite-icon-5{
+background-position: center -734px;
+transition: all .5s;
+}
+.sprite-item:hover .sprite-icon-5{
+    background-position: center -826px;
+}
+
+/* Discount sec-------------------------------------------- */
+.category-parts{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+
+}
+.part-images {
+    flex: 1;
+    height: 300px;
+    position: relative;
+}
+.part-description{
+    flex:2;
+    background: rgb(202, 188, 212);
+    padding: 20px;
+    position: relative;
+    height: 300px;
+}
+
+
+.part-description h3{
+    font-size: 25px;
+}
+.part-description .up +p{
+    line-height: 1.9;
+    font-size: 1.1em;
+    color: var(--maincolor);
+}
+.part-description .up{
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 25px;
+}
+.part-description .up .icon{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    font-size: 50px;
+    color: var(--maincolor);
+}
+.part-description .lines span{
+    display: inline-block;
+    width:50px;
+    height: 2px;
+    background: var(--maincolor);
+    margin-left: 10px;
+}
+.part-description .lines{
+    text-align: right;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+
+.part-images:nth-child(2){
+    background-image: url(../carimage/careng.jpg);
+    background-size: cover; 
+    transition: transform .5s;
+}
+.part-images:nth-child(2):hover{
+    transform: scale(1.1);
+}
+.part-images:nth-child(3){
+    background-image: url(../carimage/carwheel.jpg);
+    background-size: cover; 
+    transition: transform .8s;
+}
+.part-images:nth-child(3):hover{
+    transform: scale(1.1);
+}
+.part-image{
+    margin-top: 20px;
+    margin-left: 25px;
+    color: var(--subcolor);
+}
+/* featur-------------------------------------- */
+.featur-unlist{
+    display: flex;
+    justify-content: center;
+
+}
+.featur-unlist  li{
+    list-style: none;
+    font-size: 1.3em;
+    color: var(--maincolor);
+    text-transform: capitalize;
+}
+
+.list-feature{
+    display: flex;
+    justify-content: center;
+}
+.featur-unlist li{
+    margin: 10px 20px;
+}
+.feature-items{
+ display: grid;
+ grid-template-columns: repeat(3,1fr);
+ grid-gap:20px;
+ margin: 30px 0px;
+}
+.feature-img{
+ position: relative;
+}
+.feature-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform:scalex(0);
+    opacity: 0.7;
+    transition: transform 0.3s;
+}
+.feature-overlay ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.feature-overlay ul li{
+    width: 40px;
+    height: 40px;
+    background-color: var(--subcolor);
+    display: inline-block;
+    text-align: center;
+}
+.feature-overlay ul li i{
+    color: var(--maincolor);
+    line-height: 40px;
+}
+.feature-item:hover .feature-overlay{
+    transform: scalex(1);
+}
+.feature-rate i.active{
+    color: yellow;
+}
+.feature-rate span{
+    display: block;
+    color: var(--maincolor);
+    margin: 5px 0;
+}
+.feature-rate i{
+    margin-top: 10px;
+}
